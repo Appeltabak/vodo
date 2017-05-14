@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Vodo
+GenericName=Vodo
+Comment=A simple TODO app made as an exercise to learn Vala
+Categories=Utility
+Exec=com.github.appeltabak.vodo
+Icon=application-default-icon
+Terminal=false
+Type=Application
+X-GNOME-Gettext-Domain=vodo
+Keywords=Todo

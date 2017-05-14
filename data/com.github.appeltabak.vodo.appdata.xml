@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2017 Tonnis Oosterhoff <tonnisoosterhoff@gmail.com> -->
+<component type="desktop">
+  <id>com.github.appeltabak.vodo.desktop</id>
+  <metadata_license>CC0</metadata_license>
+  <name>Vodo</name>
+  <summary>A TODO app written in Vala</summary>
+  <description>
+    <p>A super simple TODO app made with Hack The Lulz ©</p>
+  </description>
+  <custom>
+     <value key="x-appcenter-color-primary">#603461</value>
+     <value key="x-appcenter-color-primary-text">rgb(255, 255, 255)</value>
+     <value key="x-appcenter-suggested-price">0</value>
+  </custom>
+</component>
