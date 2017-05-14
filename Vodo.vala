@@ -13,11 +13,13 @@ int main (string[] args) {
     grid.orientation = Gtk.Orientation.VERTICAL;
     window.add(grid);
 
-    var list_box = new Gtk.ListBox();
-
     var entry = new Gtk.Entry();
     entry.caps_lock_warning = false;
     entry.set_placeholder_text("What needs to be done?");
+    grid.add(entry);
+
+    var box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
+    grid.add(box);
 
     entry.activate.connect(() => {
         var new_item_text = entry.get_buffer().get_text();
@@ -27,14 +29,12 @@ int main (string[] args) {
         }
 
         var new_item = new Gtk.Label(new_item_text);
-        grid.attach_next_to(new_item, null, Gtk.PositionType.TOP);
+        box.pack_end(new_item);
         entry.set_buffer(new Gtk.EntryBuffer());
         window.show_all();
     });
     
 
-    grid.add(list_box);
-    grid.add(entry);
     window.show_all();
     Gtk.main();
     return 0;
