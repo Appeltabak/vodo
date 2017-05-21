@@ -6,7 +6,6 @@ Vodo has the following dependencies:
 
 ```
 gtk+-3.0
-
 ```
 
 Vodo uses Meson to build the application. Make sure it's installed on your system
