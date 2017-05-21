@@ -37,6 +37,15 @@ public class Vodo : Gtk.Application {
             return;
           }
 
+          var check_box = new Gtk.CheckButton();
+          grid.add(check_box);
+          check_box.toggled.connect(() => {
+
+              if (check_box.active) {
+                  return;
+              }
+          });
+
           var new_item = new Gtk.Label(new_item_text);
           box.pack_end(new_item);
           entry.set_buffer(new Gtk.EntryBuffer());
