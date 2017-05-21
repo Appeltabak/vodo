@@ -1,7 +1,7 @@
 # Vodo
 A simple TODO app made as an exercise to learn Vala
 
-# Setup
+## Setup
 Vodo has the following dependencies:
 
 ```
