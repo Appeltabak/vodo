@@ -1,5 +1,27 @@
 // modules: gtk+-3.0
 
+public class ItemView : Gtk.Grid {
+    public Gtk.Label label;
+    public Gtk.CheckButton check_button;
+
+    public ItemView(string item_text) {
+        check_button = new Gtk.CheckButton();
+        this.add(this.check_button);
+
+        this.label = new Gtk.Label(item_text);
+        this.add(this.label);
+
+        check_button.toggled.connect(() => {
+            if (check_button.active) {
+                this.label.set_markup("<s>%s</s>".printf(this.label.get_text()));
+            } else {
+                // TODO
+                var attr_list = new Pango.AttrList();
+            }
+        });
+    }
+}
+
 public class Vodo : Gtk.Application {
     Gtk.ApplicationWindow window;
 
@@ -37,17 +59,9 @@ public class Vodo : Gtk.Application {
             return;
           }
 
-          var check_box = new Gtk.CheckButton();
-          grid.add(check_box);
-          check_box.toggled.connect(() => {
-
-              if (check_box.active) {
-                  return;
-              }
-          });
-
-          var new_item = new Gtk.Label(new_item_text);
+          var new_item = new ItemView(new_item_text);
           box.pack_end(new_item);
+
           entry.set_buffer(new Gtk.EntryBuffer());
           window.show_all();
         });
