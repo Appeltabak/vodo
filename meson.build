@@ -5,4 +5,8 @@ debs = [
    dependency('pango')
 ]
 
-executable('vodo', 'Vodo.vala', dependencies : debs )
+src = [
+    'src/Vodo.vala'
+]
+
+executable('vodo', src, dependencies : debs )

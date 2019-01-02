@@ -10,13 +10,16 @@ public class ItemView : Gtk.Grid {
 
         this.label = new Gtk.Label(item_text);
         this.add(this.label);
+        
+        var strike_through_attr = Pango.attr_strikethrough_new(true);
+        var attr_list = new Pango.AttrList();
+        attr_list.insert(strike_through_attr.copy());
 
         check_button.toggled.connect(() => {
             if (check_button.active) {
-                this.label.set_markup("<s>%s</s>".printf(this.label.get_text()));
+                this.label.set_attributes(attr_list);
             } else {
-                // TODO
-                var attr_list = new Pango.AttrList();
+                this.label.set_attributes(null);
             }
         });
     }
